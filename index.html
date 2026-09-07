@@ -7,38 +7,93 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <!-- Logo Section -->
-        <div class="logo-section">
-            <svg class="logo-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                <!-- Y שוכבת (הריבוע של האפליקציה) -->
-                <path d="M 30 20 L 50 50 L 70 20 M 50 50 L 50 80" stroke="#22c55e" stroke-width="8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-            <h1 class="logo-text">
-                <span class="logo-white">SPO</span><span class="logo-green">T</span><span class="logo-white">Y</span>
-            </h1>
+    <div class="main-container">
+        <!-- Preview Section (Left Side) -->
+        <div class="preview-section">
+            <div class="preview-title">תצוגה מקדימה</div>
+            <div class="phone-frame">
+                <div class="phone-content" id="previewContent">
+                    <!-- Logo Section -->
+                    <div class="logo-section">
+                        <svg class="logo-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Y שוכבת (הריבוע של האפליקציה) -->
+                            <path d="M 30 20 L 50 50 L 70 20 M 50 50 L 50 80" stroke="#22c55e" stroke-width="8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <h1 class="logo-text">
+                            <span class="logo-white">SPO</span><span class="logo-green">T</span><span class="logo-white">Y</span>
+                        </h1>
+                    </div>
+
+                    <!-- Profile Section -->
+                    <div class="profile-section">
+                        <h2>פרופיל</h2>
+                        
+                        <form id="emailForm" class="email-form">
+                            <div class="form-group">
+                                <label for="email">אימייל:</label>
+                                <input 
+                                    type="text" 
+                                    id="email" 
+                                    name="email" 
+                                    placeholder="הכנס את האימייל שלך"
+                                    required
+                                >
+                                <span class="error-message" id="emailError"></span>
+                                <span class="success-message" id="emailSuccess"></span>
+                            </div>
+
+                            <button type="submit" class="submit-btn">המשך</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <!-- Profile Section -->
-        <div class="profile-section">
-            <h2>פרופיל</h2>
+        <!-- Control Section (Right Side) -->
+        <div class="control-section">
+            <h2>בקרות ועיצוב</h2>
             
-            <form id="emailForm" class="email-form">
-                <div class="form-group">
-                    <label for="email">אימייל:</label>
-                    <input 
-                        type="text" 
-                        id="email" 
-                        name="email" 
-                        placeholder="הכנס את האימייל שלך"
-                        required
-                    >
-                    <span class="error-message" id="emailError"></span>
-                    <span class="success-message" id="emailSuccess"></span>
-                </div>
+            <div class="control-group">
+                <label for="bgColor">צבע רקע:</label>
+                <input type="color" id="bgColor" value="#1a1a1a">
+            </div>
 
-                <button type="submit" class="submit-btn">המשך</button>
-            </form>
+            <div class="control-group">
+                <label for="logoColor">צבע הלוגו (Y):</label>
+                <input type="color" id="logoColor" value="#22c55e">
+            </div>
+
+            <div class="control-group">
+                <label for="buttonColor">צבע הכפתור:</label>
+                <input type="color" id="buttonColor" value="#22c55e">
+            </div>
+
+            <div class="control-group">
+                <label for="fontSize">גודל הטקסט:</label>
+                <input type="range" id="fontSize" min="12" max="20" value="16">
+                <span id="fontSizeValue">16px</span>
+            </div>
+
+            <div class="control-group">
+                <label for="borderRadius">עיגול הפינות:</label>
+                <input type="range" id="borderRadius" min="0" max="30" value="20">
+                <span id="borderRadiusValue">20px</span>
+            </div>
+
+            <div class="control-group">
+                <button id="resetBtn" class="reset-btn">איפוס לברירת מחדל</button>
+            </div>
+
+            <div class="info-section">
+                <h3>📱 מידע על הטופס</h3>
+                <p><strong>וידוא אימייל:</strong></p>
+                <ul>
+                    <li>✓ בדיקת פורמט תקין</li>
+                    <li>✓ חייב להיות @ אחד</li>
+                    <li>✓ אין רווחים</li>
+                    <li>✓ חייב להיות שם domain</li>
+                </ul>
+            </div>
         </div>
     </div>
 
