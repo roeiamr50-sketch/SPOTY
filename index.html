@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPOTY - חיפוש חניות בתל אביב</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Logo Section -->
+        <div class="logo-section">
+            <svg class="logo-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <!-- Y שוכבת (הריבוע של האפליקציה) -->
+                <path d="M 30 20 L 50 50 L 70 20 M 50 50 L 50 80" stroke="#22c55e" stroke-width="8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <h1 class="logo-text">
+                <span class="logo-white">SPO</span><span class="logo-green">T</span><span class="logo-white">Y</span>
+            </h1>
+        </div>
+
+        <!-- Profile Section -->
+        <div class="profile-section">
+            <h2>פרופיל</h2>
+            
+            <form id="emailForm" class="email-form">
+                <div class="form-group">
+                    <label for="email">אימייל:</label>
+                    <input 
+                        type="text" 
+                        id="email" 
+                        name="email" 
+                        placeholder="הכנס את האימייל שלך"
+                        required
+                    >
+                    <span class="error-message" id="emailError"></span>
+                    <span class="success-message" id="emailSuccess"></span>
+                </div>
+
+                <button type="submit" class="submit-btn">המשך</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
