@@ -95,6 +95,77 @@ emailForm.addEventListener('submit', function(e) {
     // }, 1500);
 });
 
-// התאמה לדוגמה - לבדיקה מהר
+// ===== בקרות עיצוב =====
+
+// קבלת אלמנטים של הקונטרולות
+const bgColorInput = document.getElementById('bgColor');
+const logoColorInput = document.getElementById('logoColor');
+const buttonColorInput = document.getElementById('buttonColor');
+const fontSizeInput = document.getElementById('fontSize');
+const fontSizeValue = document.getElementById('fontSizeValue');
+const borderRadiusInput = document.getElementById('borderRadius');
+const borderRadiusValue = document.getElementById('borderRadiusValue');
+const resetBtn = document.getElementById('resetBtn');
+const previewContent = document.getElementById('previewContent');
+
+// ערכים ברירת מחדל
+const defaultValues = {
+    bgColor: '#1a1a1a',
+    logoColor: '#22c55e',
+    buttonColor: '#22c55e',
+    fontSize: 16,
+    borderRadius: 20
+};
+
+// שינוי צבע הרקע
+bgColorInput.addEventListener('input', function() {
+    const logoSection = previewContent.querySelector('.logo-section');
+    logoSection.style.background = `linear-gradient(135deg, ${this.value} 0%, ${this.value}dd 100%)`;
+});
+
+// שינוי צבע הלוגו
+logoColorInput.addEventListener('input', function() {
+    const logoIcon = previewContent.querySelector('.logo-icon');
+    const logoGreen = previewContent.querySelector('.logo-green');
+    logoIcon.style.stroke = this.value;
+    logoGreen.style.color = this.value;
+});
+
+// שינוי צבע הכפתור
+buttonColorInput.addEventListener('input', function() {
+    const submitBtn = previewContent.querySelector('.submit-btn');
+    submitBtn.style.background = `linear-gradient(135deg, ${this.value} 0%, ${this.value}cc 100%)`;
+});
+
+// שינוי גודל הטקסט
+fontSizeInput.addEventListener('input', function() {
+    const profileSection = previewContent.querySelector('.profile-section');
+    profileSection.style.fontSize = this.value + 'px';
+    fontSizeValue.textContent = this.value + 'px';
+});
+
+// שינוי עיגול הפינות
+borderRadiusInput.addEventListener('input', function() {
+    const phoneFrame = document.querySelector('.phone-frame');
+    phoneFrame.style.borderRadius = this.value + 'px';
+    borderRadiusValue.textContent = this.value + 'px';
+});
+
+// איפוס לברירת מחדל
+resetBtn.addEventListener('click', function() {
+    bgColorInput.value = defaultValues.bgColor;
+    logoColorInput.value = defaultValues.logoColor;
+    buttonColorInput.value = defaultValues.buttonColor;
+    fontSizeInput.value = defaultValues.fontSize;
+    borderRadiusInput.value = defaultValues.borderRadius;
+    
+    // טריגר אירועים
+    bgColorInput.dispatchEvent(new Event('input'));
+    logoColorInput.dispatchEvent(new Event('input'));
+    buttonColorInput.dispatchEvent(new Event('input'));
+    fontSizeInput.dispatchEvent(new Event('input'));
+    borderRadiusInput.dispatchEvent(new Event('input'));
+});
+
 console.log('🚗 SPOTY - אפליקציית חיפוש חניות בתל אביב');
 console.log('📝 הכנס אימייל תקין כדי להמשיך');
